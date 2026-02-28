@@ -32,7 +32,7 @@ const ContextProvider = ({ children }) => {
     useEffect(() => {
         const fetchProduct = async () => {
 
-            const res = await axios.get("https://step-zone.vercel.app/Collection/products")
+            const res = await axios.get("https://stepzone.onrender.com/Collection/products")
             setproduct(res.data)
 
         }
