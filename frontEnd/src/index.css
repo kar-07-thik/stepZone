@@ -1,0 +1,267 @@
+@import "tailwindcss";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: weight;
+    font-style: normal;
+
+}
+
+.Collection-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.Collection-product {
+    border: solid rgb(217, 214, 214) 1px;
+    border-radius: 5px;
+    position: relative;
+
+}
+
+.sizeContainer {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Inter, sans-serif;
+    gap: 5px;
+
+}
+
+.sizeBox {
+    flex-basis: 13%;
+    flex-grow: 1;
+    border: solid gray 1px;
+    text-align: center;
+    font-weight: 700;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.sizeBox:hover {
+    background-color: rgb(170, 169, 169);
+}
+
+.P-ImageConatiner {
+    padding: 10px;
+    overflow-x: scroll;
+    border-radius: 5px;
+    scrollbar-width: none;
+}
+
+.P-ImageConatiner img {
+    width: 500px;
+    height: 100%;
+}
+
+.popBox {
+    position: fixed;
+    display: flex;
+    width: fit-content;
+    padding: 10px;
+    background-color: white;
+    border: solid rgb(197, 197, 197) 1px;
+    border-radius: 5px;
+    gap: 5px;
+    align-items: center;
+    top: 0;
+    animation-name: popBox;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    z-index: 40;
+}
+
+
+
+/* Animation */
+@keyframes popBox {
+    0% {
+        transform: translateY(-100px);
+    }
+
+    25% {
+        transform: translateY(10px);
+    }
+
+    50% {
+        transform: translateY(10px);
+    }
+
+    75% {
+        transform: translateY(10px);
+    }
+
+    100% {
+        transform: translateY(-100px);
+    }
+}
+
+
+
+/* media qurries */
+@media (min-width: 0px) and (max-width: 546px) {
+    body {
+        font-size: 12px;
+    }
+
+    .Collection-product {
+        flex-basis: 45%;
+
+    }
+
+    .P-ImageConatiner {
+        width: 100%;
+        height: 350px;
+        display: flex;
+    }
+
+    .P-ImageConatiner img {
+        border-right: solid 4px gray;
+    }
+
+    .sizeContainer {
+        width: 100%;
+    }
+
+    .popBox {
+        left: 28%;
+    }
+}
+
+@media (min-width: 546px) and (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    .Collection-product {
+        flex-basis: 30%;
+
+    }
+
+    .P-ImageConatiner {
+        width: 100%;
+        height: 350px;
+        display: flex;
+    }
+
+    .P-ImageConatiner img {
+        border-right: solid 4px gray;
+    }
+
+    .sizeContainer {
+        width: 100%;
+    }
+
+    .popBox {
+        left: 37%;
+    }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    body {
+        font-size: 12px;
+    }
+
+    .Collection-container {
+        width: 90%;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .Collection-product {
+        flex-basis: 30%;
+
+    }
+
+    .P-ImageConatiner {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+
+    .sizeContainer {
+        width: 100%;
+    }
+
+    .popBox {
+        left: 42%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1000px) {
+    body {
+        font-size: 12px;
+    }
+
+    .Collection-container {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .Collection-product {
+        flex-basis: 30%;
+
+    }
+
+    .P-ImageConatiner {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+
+    .sizeContainer {
+        width: 100%;
+    }
+
+
+
+
+    .popBox {
+        left: 43%;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1600px) {
+    body {
+        font-size: 16px;
+    }
+
+    .Collection-container {
+        width: 80%;
+        margin: auto;
+        margin-top: 20px;
+    }
+
+    .Collection-product {
+        flex-basis: 24%;
+
+    }
+
+    .P-ImageConatiner {
+        width: 100%;
+
+    }
+
+    .P-ImageConatiner img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .popBox {
+        left: 43%;
+    }
+}
