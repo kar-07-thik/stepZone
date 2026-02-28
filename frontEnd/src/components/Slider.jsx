@@ -22,7 +22,7 @@ const Slider = () => {
                 <div className="w-full h-full hidden relative md:block overflow-hidden">
                     <div className=" w-full h-full flex duration-700" style={{ transform: `translateX(-${index * 100}%)` }}>
                         {images.map((item, index) => {
-                            return item.type == "video" ? (<video key={index} src={item.src} autoPlay muted loop className="w-full h-full shrink-0 object-cover"></video>) :
+                            return item.type == "video" ? (<video key={index} src={item.src} autoPlay muted loop playsInline className="w-full h-full shrink-0 object-cover"></video>) :
                                 (<img key={index} src={item.src} className="w-full h-full shrink-0" />)
                         })}
 
