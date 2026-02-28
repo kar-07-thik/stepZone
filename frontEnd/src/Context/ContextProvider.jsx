@@ -32,7 +32,7 @@ const ContextProvider = ({ children }) => {
     useEffect(() => {
         const fetchProduct = async () => {
 
-            const res = await axios.get("http://localhost:5000/Collection/products")
+            const res = await axios.get("https://stepzone.onrender.com/Collection/products")
             setproduct(res.data)
 
         }
@@ -82,7 +82,7 @@ const ContextProvider = ({ children }) => {
 
             return;
         }
-        await axios.post("http://localhost:5000/Addtocard", { productId: id, size: Selectedsize, userID: user.uid })
+        await axios.post("https://stepzone.onrender.com/Addtocard", { productId: id, size: Selectedsize, userID: user.uid })
         // Fetching card from DB
         await FetchingCard()
         setShowAddtocard(true)
@@ -95,7 +95,7 @@ const ContextProvider = ({ children }) => {
     }
 
     const FetchingCard = async () => {
-        const res = await axios.post("http://localhost:5000/sentCards", { userID: user.uid })
+        const res = await axios.post("https://stepzone.onrender.com/sentCards", { userID: user.uid })
         setAddtocard(res.data)
     }
 

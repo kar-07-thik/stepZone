@@ -8,7 +8,7 @@ const AddToCard = () => {
 
     const delectCard = async (ID) => {
         try {
-            await axios.delete(`http://localhost:5000/removeCard/${ID}`)
+            await axios.delete(`https://stepzone.onrender.com/removeCard/${ID}`)
             await FetchingCard()
         } catch (err) {
             console.log(err)

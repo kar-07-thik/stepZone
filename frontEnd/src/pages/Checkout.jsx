@@ -20,7 +20,7 @@ const Checkout = () => {
 
 
     const fetchingDelivery = async () => {
-        const res = await axios.post("http://localhost:5000/fetchingDelivery", { userID: user.uid })
+        const res = await axios.post("https://stepzone.onrender.com/fetchingDelivery", { userID: user.uid })
 
         const data = res.data[0]
 
@@ -53,7 +53,7 @@ const Checkout = () => {
             return;
         }
 
-        const res = await axios.post("http://localhost:5000/Deliverydetails", { userID: user.uid, Fristname: fristName, Lastname: lastName, Address: address, Country: country, State: state, City: city, Zip: zip })
+        const res = await axios.post("https://stepzone.onrender.com/Deliverydetails", { userID: user.uid, Fristname: fristName, Lastname: lastName, Address: address, Country: country, State: state, City: city, Zip: zip })
         Navigate("/")
         setShowAddtocard(false)
         setpaymentpopBox(true)
