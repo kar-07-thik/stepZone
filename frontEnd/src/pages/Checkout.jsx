@@ -132,10 +132,11 @@ const Checkout = () => {
 
                                     </div>
                                 ))}
+                                
 
                         </div>
 
-                        <div className="w-full mb-5">
+                        <div className="w-full">
                             <button onClick={Paynow} className="bg-black text-white w-full p-3 rounded-2xl  ">Pay Now</button>
                         </div>
 

@@ -9,7 +9,7 @@ const Login = () => {
     const Navigate = useNavigate()
     const [LEemail, setLEemail] = useState("")
     const [LEpass, setLEpass] = useState("")
-    const [emailRegxErr, setemailRegxErr] = useState()
+
 
 
     const loginAuthHandler = async (e) => {
@@ -30,6 +30,9 @@ const Login = () => {
         } catch (err) {
             if (err.code === "auth/invalid-credential") {
                 setLoginpopBox(true)
+                setTimeout(() => {
+                    setLoginpopBox(false)
+                }, 4000)
             }
         }
 
