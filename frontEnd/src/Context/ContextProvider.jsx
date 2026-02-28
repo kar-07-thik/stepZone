@@ -32,7 +32,7 @@ const ContextProvider = ({ children }) => {
     useEffect(() => {
         const fetchProduct = async () => {
 
-            const res = await axios.get("https://stepzone.onrender.com/Collection/products")
+            const res = await axios.get("https://step-zone.vercel.app/Collection/products")
             setproduct(res.data)
 
         }
@@ -90,8 +90,9 @@ const ContextProvider = ({ children }) => {
     }
 
     const cardHandler = async () => {
-        await FetchingCard()
         setShowAddtocard(true)
+        await FetchingCard()
+
     }
 
     const FetchingCard = async () => {
