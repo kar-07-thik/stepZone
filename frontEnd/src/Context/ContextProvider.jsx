@@ -42,11 +42,10 @@ const ContextProvider = ({ children }) => {
     }
 
     useEffect(() => {
-        constloadData = async () => {
-            await fetchProduct()
-            await FetchingCard()
-        }
-        loadData()
+
+        fetchProduct()
+        FetchingCard()
+
 
     }, [])
 
