@@ -28,16 +28,25 @@ const ContextProvider = ({ children }) => {
     const [LoginpopBox, setLoginpopBox] = useState(false)
     const [UsercheckpopBox, setUsercheckpopBox] = useState(false)
     const [showSales, setshowSales] = useState(true)
+    // fetchProduct
+    const fetchProduct = async () => {
+
+        const res = await axios.get("https://stepzone.onrender.com/Collection/products")
+        setproduct(res.data)
+
+    }
+    // fetchCard
+    const FetchingCard = async () => {
+        const res = await axios.post("https://stepzone.onrender.com/sentCards", { userID: user.uid })
+        setAddtocard(res.data)
+    }
 
     useEffect(() => {
-        const fetchProduct = async () => {
-
-            const res = await axios.get("https://stepzone.onrender.com/Collection/products")
-            setproduct(res.data)
-
+        constloadData = async () => {
+            await fetchProduct()
+            await FetchingCard()
         }
-        fetchProduct()
-        FetchingCard()
+        loadData()
 
     }, [])
 
@@ -95,10 +104,6 @@ const ContextProvider = ({ children }) => {
 
     }
 
-    const FetchingCard = async () => {
-        const res = await axios.post("https://stepzone.onrender.com/sentCards", { userID: user.uid })
-        setAddtocard(res.data)
-    }
 
     const Subtotal = Addtocard.reduce((total, item) => {
         return total + item.originalPrice
